@@ -1,0 +1,328 @@
+{
+    "path_rules": [
+        {
+            "id": "test-architecture",
+            "priority": 300,
+            "owner": "architecture-test",
+            "patterns": [
+                "~(?:^|/)tests/ArchitectureTest\\.php$~i"
+            ],
+            "references": [
+                "references/tests/ArchitectureTest.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-pest-config",
+            "priority": 300,
+            "owner": "pest-config",
+            "patterns": [
+                "~(?:^|/)tests/Pest\\.php$~i"
+            ],
+            "references": [
+                "references/tests/Pest.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-base-case",
+            "priority": 300,
+            "owner": "base-test-case",
+            "patterns": [
+                "~(?:^|/)tests/TestCase\\.php$~i"
+            ],
+            "references": [
+                "references/tests/TestCase.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-unit-enum",
+            "priority": 280,
+            "owner": "enum-unit-test",
+            "patterns": [
+                "~(?:^|/)tests/Unit/Enums(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Unit/Enums/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-unit-model",
+            "priority": 280,
+            "owner": "model-unit-test",
+            "patterns": [
+                "~(?:^|/)tests/Unit/Models(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Unit/Models/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-integration-action",
+            "priority": 280,
+            "owner": "action-integration-test",
+            "patterns": [
+                "~(?:^|/)tests/Integration/Actions(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Integration/Actions/README.md",
+                "references/tests/Integration/Actions/scenario-catalog.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design",
+                "action-boundary"
+            ],
+            "operation_set": "action-integration"
+        },
+        {
+            "id": "test-integration-resource",
+            "priority": 280,
+            "owner": "resource-integration-test",
+            "patterns": [
+                "~(?:^|/)tests/Integration/Http/Resources(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Integration/Http/Resources/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-integration-listener",
+            "priority": 280,
+            "owner": "listener-integration-test",
+            "patterns": [
+                "~(?:^|/)tests/Integration/Listeners(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Integration/Listeners/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-integration-model-concern",
+            "priority": 290,
+            "owner": "model-concern-integration-test",
+            "patterns": [
+                "~(?:^|/)tests/Integration/Models/Concerns(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Integration/Models/Concerns/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-integration-model",
+            "priority": 280,
+            "owner": "model-integration-test",
+            "patterns": [
+                "~(?:^|/)tests/Integration/Models(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Integration/Models/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-integration-media",
+            "priority": 280,
+            "owner": "media-integration-test",
+            "patterns": [
+                "~(?:^|/)tests/Integration/Support/Media(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Integration/Support/Media/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-feature-console",
+            "priority": 280,
+            "owner": "console-feature-test",
+            "patterns": [
+                "~(?:^|/)tests/Feature/Console(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Feature/Console/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-feature-api-controller",
+            "priority": 290,
+            "owner": "api-controller-feature-test",
+            "patterns": [
+                "~(?:^|/)tests/Feature/Http/Controllers/Api(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Feature/Http/Controllers/Api/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design",
+                "http-boundary"
+            ],
+            "operation_set": "api-controller-feature"
+        },
+        {
+            "id": "test-feature-controller",
+            "priority": 280,
+            "owner": "controller-feature-test",
+            "patterns": [
+                "~(?:^|/)tests/Feature/Http/Controllers(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Feature/Http/Controllers/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design",
+                "http-boundary"
+            ],
+            "operation_set": "controller-feature"
+        },
+        {
+            "id": "test-feature-middleware",
+            "priority": 280,
+            "owner": "middleware-feature-test",
+            "patterns": [
+                "~(?:^|/)tests/Feature/Http/Middleware(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Feature/Http/Middleware/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design",
+                "http-boundary"
+            ]
+        },
+        {
+            "id": "test-feature-model-concern",
+            "priority": 280,
+            "owner": "model-concern-feature-test",
+            "patterns": [
+                "~(?:^|/)tests/Feature/Models/Concerns(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Feature/Models/Concerns/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-support-model",
+            "priority": 280,
+            "owner": "test-support-model",
+            "patterns": [
+                "~(?:^|/)tests/Support/Models(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/Support/Models/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-support",
+            "priority": 270,
+            "owner": "test-support",
+            "patterns": [
+                "~(?:^|/)tests/TestSupport(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/TestSupport/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-migration",
+            "priority": 270,
+            "owner": "test-migration",
+            "patterns": [
+                "~(?:^|/)tests/migrations(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/migrations/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "test-fixture",
+            "priority": 270,
+            "owner": "test-fixture",
+            "patterns": [
+                "~(?:^|/)tests/testfiles(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/testfiles/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        },
+        {
+            "id": "test-generic",
+            "priority": 100,
+            "owner": "test-generic",
+            "patterns": [
+                "~(?:^|/)tests(?:/|$)~i"
+            ],
+            "references": [
+                "references/tests/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "test-design"
+            ]
+        }
+    ]
+}

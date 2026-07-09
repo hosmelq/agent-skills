@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Thread Orchestrator"
+  short_description: "Route visible Codex tasks with compact durable state"
+  default_prompt: "Use $codex-thread-orchestrator to route visible Codex tasks through compact durable callbacks and parent-owned visible review."

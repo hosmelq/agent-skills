@@ -1,0 +1,326 @@
+{
+    "concerns": {
+        "aggregate": {
+            "owners": [
+                "action",
+                "action-integration-test"
+            ],
+            "references_by_owner_operation": {
+                "action": [
+                    {
+                        "operations": [
+                            "create",
+                            "store"
+                        ],
+                        "references": [
+                            "references/app/Actions/patterns/aggregate-nested-writes-and-rollback.md"
+                        ]
+                    },
+                    {
+                        "operations": [
+                            "update"
+                        ],
+                        "references": [
+                            "references/app/Actions/patterns/aggregate-relation-resolution.md"
+                        ]
+                    }
+                ],
+                "action-integration-test": [
+                    {
+                        "operations": [
+                            "create",
+                            "store"
+                        ],
+                        "references": [
+                            "references/tests/Integration/Actions/scenario-catalog/aggregate-create-actions.md"
+                        ]
+                    },
+                    {
+                        "operations": [
+                            "update"
+                        ],
+                        "references": [
+                            "references/tests/Integration/Actions/scenario-catalog/aggregate-update-actions.md"
+                        ]
+                    },
+                    {
+                        "operations": [
+                            "destroy"
+                        ],
+                        "references": [
+                            "references/tests/Integration/Actions/scenario-catalog/aggregate-delete-and-child-actions.md"
+                        ]
+                    }
+                ]
+            },
+            "gates": [
+                "action-boundary"
+            ]
+        },
+        "authorization": {
+            "owners": [
+                "controller",
+                "api-controller",
+                "controller-feature-test",
+                "api-controller-feature-test",
+                "policy"
+            ],
+            "references": [
+                "references/app/Policies/README.md"
+            ],
+            "references_by_owner": {
+                "*-controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/entrypoint-contracts.md"
+                ],
+                "controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/entrypoint-contracts.md"
+                ]
+            },
+            "gates": [
+                "http-boundary"
+            ]
+        },
+        "binding": {
+            "owners": [
+                "controller",
+                "api-controller",
+                "form-request",
+                "controller-feature-test",
+                "api-controller-feature-test",
+                "model",
+                "model-*-test"
+            ],
+            "references_by_owner": {
+                "controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/route-patterns.md"
+                ],
+                "api-controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/route-patterns.md"
+                ],
+                "controller": [
+                    "references/app/Http/Controllers/patterns/web-controller-shape.md"
+                ],
+                "api-controller": [
+                    "references/app/Http/Controllers/patterns/api-controllers.md"
+                ],
+                "form-request": [
+                    "references/app/Http/Requests/patterns/request-shape.md"
+                ],
+                "model": [
+                    "references/app/Models/patterns/route-keys-and-public-ids.md"
+                ]
+            },
+            "gates": [
+                "http-boundary"
+            ]
+        },
+        "concurrency": {
+            "owners": [
+                "action",
+                "action-integration-test"
+            ],
+            "references": [
+                "references/app/Actions/patterns/existing-shared-root-lock-protocols-only.md"
+            ],
+            "gates": [
+                "action-boundary"
+            ]
+        },
+        "delegated-action": {
+            "owners": [
+                "controller",
+                "api-controller",
+                "controller-feature-test",
+                "api-controller-feature-test"
+            ],
+            "references_by_owner": {
+                "controller": [
+                    "references/app/Http/Controllers/patterns/delegated-actions.md"
+                ],
+                "api-controller": [
+                    "references/app/Http/Controllers/patterns/api-controllers.md"
+                ],
+                "controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/delegated-action-contracts.md"
+                ],
+                "api-controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/delegated-action-contracts.md"
+                ]
+            },
+            "gates": [
+                "http-boundary"
+            ]
+        },
+        "factory-relationships": {
+            "owners": [
+                "factory",
+                "model-integration-test"
+            ],
+            "references": [
+                "references/database/factories/patterns/factory-relationship-apis.md",
+                "references/database/factories/patterns/relationship-coherence.md"
+            ],
+            "gates": [
+                "code-and-schema"
+            ]
+        },
+        "lifecycle": {
+            "owners": [
+                "action",
+                "action-integration-test",
+                "controller",
+                "controller-feature-test",
+                "javascript"
+            ],
+            "references_by_owner": {
+                "action": [
+                    "references/app/Actions/patterns/idempotent-lifecycle-flags.md"
+                ],
+                "action-integration-test": [
+                    "references/tests/Integration/Actions/scenario-catalog/lifecycle-default-and-delete-actions.md"
+                ],
+                "controller": [
+                    "references/app/Http/Controllers/lifecycle-resources.md"
+                ],
+                "controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/pattern-catalog.md"
+                ],
+                "javascript": [
+                    "references/resources/js/patterns/show-and-lifecycle-pages.md"
+                ]
+            }
+        },
+        "move": {
+            "owners": [
+                "action",
+                "action-integration-test",
+                "controller",
+                "form-request",
+                "controller-feature-test",
+                "javascript"
+            ],
+            "references_by_owner": {
+                "action": [
+                    "references/app/Actions/patterns/group-order-transitions.md"
+                ],
+                "action-integration-test": [
+                    "references/tests/Integration/Actions/scenario-catalog/state-and-order-actions.md"
+                ],
+                "controller": [
+                    "references/app/Http/Controllers/patterns/move-within-group.md"
+                ],
+                "form-request": [
+                    "references/app/Http/Requests/patterns/move-within-group.md"
+                ],
+                "controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/pattern-catalog/move.md"
+                ],
+                "javascript": [
+                    "references/resources/js/patterns/ordered-list-movement.md"
+                ]
+            }
+        },
+        "persistence": {
+            "owners": [
+                "*-test",
+                "test-*"
+            ],
+            "references": [
+                "references/tests/maps/persistence-assertions.md"
+            ],
+            "gates": [
+                "test-design"
+            ]
+        },
+        "public-id": {
+            "owners": [
+                "model",
+                "model-*-test",
+                "form-request",
+                "controller-feature-test",
+                "migration",
+                "factory"
+            ],
+            "references_by_owner": {
+                "model": [
+                    "references/app/Models/patterns/route-keys-and-public-ids.md"
+                ],
+                "model-*-test": [
+                    "references/tests/Integration/Models/README.md"
+                ],
+                "form-request": [
+                    "references/app/Http/Requests/patterns/normalization.md"
+                ],
+                "controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/validation/dataset-catalog/public-id-and-managed-inputs.md"
+                ],
+                "migration": [
+                    "references/database/migrations/README.md"
+                ],
+                "factory": [
+                    "references/database/factories/README.md"
+                ]
+            },
+            "gates": [
+                "code-and-schema"
+            ]
+        },
+        "resource-contract": {
+            "owners": [
+                "resource",
+                "resource-integration-test",
+                "controller-feature-test",
+                "api-controller-feature-test"
+            ],
+            "references_by_owner": {
+                "resource": [
+                    "references/app/Http/Resources/patterns/resource-shape.md"
+                ],
+                "resource-integration-test": [
+                    "references/tests/Integration/Http/Resources/README.md"
+                ],
+                "controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/transport-baselines.md"
+                ],
+                "api-controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/modes/api-json.md"
+                ]
+            }
+        },
+        "test-style": {
+            "owners": [
+                "*-test",
+                "test-*",
+                "pest-config",
+                "base-test-case"
+            ],
+            "references": [
+                "references/tests/Pest/expectation-chains.md"
+            ],
+            "gates": [
+                "test-design"
+            ]
+        },
+        "validation": {
+            "owners": [
+                "form-request",
+                "controller-feature-test",
+                "api-controller-feature-test"
+            ],
+            "references_by_owner": {
+                "form-request": [
+                    "references/app/Http/Requests/patterns/request-shape.md"
+                ],
+                "controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/validation/dataset-catalog.md"
+                ],
+                "api-controller-feature-test": [
+                    "references/tests/Feature/Http/Controllers/Api/patterns/file-and-validation-shape.md"
+                ]
+            },
+            "gates": [
+                "http-boundary"
+            ]
+        }
+    }
+}

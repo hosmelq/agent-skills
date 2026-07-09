@@ -1,0 +1,141 @@
+{
+  "cases": [
+    {
+      "id": "controller_update_delegation",
+      "paths": ["tests/Feature/Http/Controllers/UpdateRecordControllerTest.php"],
+      "concerns": ["delegated-action"],
+      "expected_rule": "test-feature-controller",
+      "expected_operation": "update",
+      "required_references": [
+        "references/tests/Feature/Http/Controllers/README.md",
+        "references/tests/Feature/Http/Controllers/actions/update.md",
+        "references/tests/Feature/Http/Controllers/delegated-action-contracts.md",
+        "references/core/test-design-and-style.md",
+        "references/core/http-and-request-boundaries.md"
+      ]
+    },
+    {
+      "id": "action_move_concurrency",
+      "paths": ["app/Actions/MoveRecord.php"],
+      "concerns": ["concurrency"],
+      "expected_rule": "app-action",
+      "expected_operation": "move",
+      "required_references": [
+        "references/app/Actions/README.md",
+        "references/app/Actions/patterns/group-order-transitions.md",
+        "references/app/Actions/patterns/existing-shared-root-lock-protocols-only.md",
+        "references/core/actions-and-concurrency.md"
+      ]
+    },
+    {
+      "id": "request_move_validation",
+      "paths": ["app/Http/Requests/MoveRecordRequest.php"],
+      "concerns": ["validation"],
+      "expected_rule": "app-form-request",
+      "expected_operation": "move",
+      "required_references": [
+        "references/app/Http/Requests/README.md",
+        "references/app/Http/Requests/patterns/move-within-group.md",
+        "references/app/Http/Requests/patterns/request-shape.md",
+        "references/core/http-and-request-boundaries.md"
+      ]
+    },
+    {
+      "id": "model_public_id",
+      "paths": ["app/Models/Record.php"],
+      "concerns": ["public-id"],
+      "expected_rule": "app-model",
+      "expected_operation": null,
+      "required_references": [
+        "references/app/Models/README.md",
+        "references/app/Models/patterns/route-keys-and-public-ids.md",
+        "references/core/code-and-schema.md"
+      ]
+    },
+    {
+      "id": "migration",
+      "paths": ["database/migrations/2026_01_01_000000_create_records_table.php"],
+      "concerns": [],
+      "expected_rule": "database-migration",
+      "expected_operation": null,
+      "required_references": [
+        "references/database/migrations/README.md",
+        "references/core/code-and-schema.md"
+      ]
+    },
+    {
+      "id": "javascript_index",
+      "paths": ["resources/js/pages/records/index.tsx"],
+      "concerns": [],
+      "expected_rule": "resource-javascript",
+      "expected_operation": "index",
+      "required_references": [
+        "references/resources/js/README.md",
+        "references/resources/js/patterns/index-pages.md"
+      ]
+    },
+    {
+      "id": "multi_surface_update",
+      "paths": [
+        "app/Actions/UpdateRecord.php",
+        "tests/Integration/Actions/UpdateRecordTest.php"
+      ],
+      "operation": "update",
+      "concerns": ["persistence"],
+      "expected_rule": "app-action",
+      "expected_operation": "update",
+      "required_references": [
+        "references/app/Actions/README.md",
+        "references/app/Actions/patterns/action-shape.md",
+        "references/tests/Integration/Actions/README.md",
+        "references/tests/Integration/Actions/scenario-catalog/update-actions.md",
+        "references/tests/maps/persistence-assertions.md"
+      ]
+    },
+    {
+      "id": "resource_contract",
+      "paths": ["tests/Integration/Http/Resources/RecordResourceTest.php"],
+      "concerns": ["resource-contract"],
+      "expected_rule": "test-integration-resource",
+      "expected_operation": null,
+      "required_references": [
+        "references/tests/Integration/Http/Resources/README.md",
+        "references/core/test-design-and-style.md"
+      ]
+    },
+    {
+      "id": "aggregate_update_is_operation_scoped",
+      "paths": [
+        "app/Actions/UpdateAggregate.php",
+        "tests/Integration/Actions/UpdateAggregateTest.php"
+      ],
+      "concerns": ["aggregate"],
+      "expected_rule": "app-action",
+      "expected_operation": "update",
+      "required_references": [
+        "references/app/Actions/patterns/aggregate-relation-resolution.md",
+        "references/tests/Integration/Actions/scenario-catalog/aggregate-update-actions.md"
+      ],
+      "forbidden_references": [
+        "references/app/Actions/patterns/aggregate-nested-writes-and-rollback.md",
+        "references/tests/Integration/Actions/scenario-catalog/aggregate-create-actions.md",
+        "references/tests/Integration/Actions/scenario-catalog/aggregate-delete-and-child-actions.md"
+      ]
+    },
+    {
+      "id": "api_update_uses_json_operation_leaf",
+      "paths": ["tests/Feature/Http/Controllers/Api/UpdateIdentityControllerTest.php"],
+      "concerns": [],
+      "expected_rule": "test-feature-api-controller",
+      "expected_operation": "update",
+      "required_references": [
+        "references/tests/Feature/Http/Controllers/Api/README.md",
+        "references/tests/Feature/Http/Controllers/modes/api-json/json-update-example.md",
+        "references/core/http-and-request-boundaries.md"
+      ],
+      "forbidden_references": [
+        "references/tests/Feature/Http/Controllers/actions/update.md"
+      ]
+    }
+  ]
+}

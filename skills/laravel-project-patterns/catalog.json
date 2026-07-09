@@ -1,0 +1,30 @@
+{
+    "schema_version": 1,
+    "defaults": {
+        "max_references": 12,
+        "max_words": 2400,
+        "max_frontier_options": 20
+    },
+    "global_gates": [
+        "completion"
+    ],
+    "navigation_exclusions": [
+        "SKILL.md",
+        "references/MAP.md",
+        "references/README.md",
+        "references/context-resolver.md",
+        "references/core/README.md",
+        "references/maps/core.md",
+        "references/maps/database-and-resources.md",
+        "references/maps/project-and-application.md",
+        "references/maps/tests.md"
+    ],
+    "includes": [
+        "catalog/selectors.json",
+        "catalog/concerns.json",
+        "catalog/path-rules-tests.json",
+        "catalog/path-rules-application.json",
+        "catalog/path-rules-project.json",
+        "catalog/coverage.json"
+    ]
+}

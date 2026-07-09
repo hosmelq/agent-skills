@@ -1,0 +1,196 @@
+{
+    "path_rules": [
+        {
+            "id": "database-migration",
+            "priority": 240,
+            "owner": "migration",
+            "patterns": [
+                "~(?:^|/)database/migrations(?:/|$)~i"
+            ],
+            "references": [
+                "references/database/migrations/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "database-factory",
+            "priority": 240,
+            "owner": "factory",
+            "patterns": [
+                "~(?:^|/)database/factories(?:/|$)~i"
+            ],
+            "references": [
+                "references/database/factories/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "database-seeder",
+            "priority": 240,
+            "owner": "seeder",
+            "patterns": [
+                "~(?:^|/)database/seeders(?:/|$)~i"
+            ],
+            "references": [
+                "references/project/patterns/seeders.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "database-generic",
+            "priority": 100,
+            "owner": "database",
+            "patterns": [
+                "~(?:^|/)database(?:/|$)~i"
+            ],
+            "references": [
+                "references/database/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "resource-javascript",
+            "priority": 230,
+            "owner": "javascript",
+            "patterns": [
+                "~(?:^|/)resources/js(?:/|$)~i"
+            ],
+            "references": [
+                "references/resources/js/README.md"
+            ],
+            "gates": [
+                "live-evidence"
+            ],
+            "operation_set": "javascript-page"
+        },
+        {
+            "id": "resource-view",
+            "priority": 230,
+            "owner": "blade-view",
+            "patterns": [
+                "~(?:^|/)resources/views(?:/|$)~i"
+            ],
+            "references": [
+                "references/resources/views/README.md"
+            ],
+            "gates": [
+                "live-evidence"
+            ]
+        },
+        {
+            "id": "resource-react-email",
+            "priority": 230,
+            "owner": "react-email",
+            "patterns": [
+                "~(?:^|/)resources/react-email(?:/|$)~i"
+            ],
+            "references": [
+                "references/resources/react-email/README.md"
+            ],
+            "gates": [
+                "live-evidence"
+            ]
+        },
+        {
+            "id": "resource-generic",
+            "priority": 100,
+            "owner": "resource-layer",
+            "patterns": [
+                "~(?:^|/)resources(?:/|$)~i"
+            ],
+            "references": [
+                "references/resources/README.md"
+            ],
+            "gates": [
+                "live-evidence"
+            ]
+        },
+        {
+            "id": "project-routes",
+            "priority": 220,
+            "owner": "routes",
+            "patterns": [
+                "~(?:^|/)routes(?:/|$)~i"
+            ],
+            "references": [
+                "references/project/patterns/routes.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema",
+                "http-boundary"
+            ]
+        },
+        {
+            "id": "project-config",
+            "priority": 220,
+            "owner": "configuration",
+            "patterns": [
+                "~(?:^|/)config(?:/|$)~i"
+            ],
+            "references": [
+                "references/project/patterns/configuration-files.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "project-localization",
+            "priority": 220,
+            "owner": "localization",
+            "patterns": [
+                "~(?:^|/)lang(?:/|$)~i"
+            ],
+            "references": [
+                "references/project/patterns/localization-files.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "project-entrypoint",
+            "priority": 220,
+            "owner": "bootstrap-entrypoint",
+            "patterns": [
+                "~(?:^|/)(?:bootstrap|public)(?:/|$)~i"
+            ],
+            "references": [
+                "references/project/patterns/bootstrap-and-public-entrypoints.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "project-tooling",
+            "priority": 210,
+            "owner": "project-tooling",
+            "patterns": [
+                "~(?:^|/)(?:artisan|composer\\.(?:json|lock)|package(?:-lock)?\\.json|bun\\.lockb?|pnpm-lock\\.yaml|yarn\\.lock|nub[^/]*|solo\\.ya?ml|phpunit[^/]*\\.xml|vitest\\.config\\.[^/]+|tailwind\\.config\\.[^/]+|postcss\\.config\\.[^/]+|vite\\.config\\.[^/]+|tsconfig[^/]*\\.json|eslint[^/]*|prettier[^/]*|phpstan[^/]*|rector[^/]*|pint\\.json|lefthook[^/]*|Procfile|\\.(?:env(?:\\.[^.]+)?\\.example|php-version|node-version|nvmrc|editorconfig))$~i"
+            ],
+            "references": [
+                "references/project/configuration-and-tooling.md"
+            ],
+            "gates": [
+                "live-evidence"
+            ]
+        }
+    ]
+}

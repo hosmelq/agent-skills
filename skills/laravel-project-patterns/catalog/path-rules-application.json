@@ -1,0 +1,302 @@
+{
+    "path_rules": [
+        {
+            "id": "app-action",
+            "priority": 250,
+            "owner": "action",
+            "patterns": [
+                "~(?:^|/)app/Actions(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Actions/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema",
+                "action-boundary"
+            ],
+            "operation_set": "application-action"
+        },
+        {
+            "id": "app-console-command",
+            "priority": 250,
+            "owner": "console-command",
+            "patterns": [
+                "~(?:^|/)app/Console/Commands(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Console/Commands/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-enum",
+            "priority": 250,
+            "owner": "enum",
+            "patterns": [
+                "~(?:^|/)app/Enums(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Enums/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-exception",
+            "priority": 250,
+            "owner": "exception",
+            "patterns": [
+                "~(?:^|/)app/Exceptions(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Exceptions/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-api-controller",
+            "priority": 260,
+            "owner": "api-controller",
+            "patterns": [
+                "~(?:^|/)app/Http/Controllers/Api(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Http/Controllers/README.md",
+                "references/app/Http/Controllers/patterns/api-controllers.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema",
+                "http-boundary"
+            ],
+            "operation_set": "application-api-controller"
+        },
+        {
+            "id": "app-controller",
+            "priority": 250,
+            "owner": "controller",
+            "patterns": [
+                "~(?:^|/)app/Http/Controllers(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Http/Controllers/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema",
+                "http-boundary"
+            ],
+            "operation_set": "application-controller"
+        },
+        {
+            "id": "app-middleware",
+            "priority": 250,
+            "owner": "middleware",
+            "patterns": [
+                "~(?:^|/)app/Http/Middleware(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Http/Middleware/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema",
+                "http-boundary"
+            ]
+        },
+        {
+            "id": "app-form-request",
+            "priority": 250,
+            "owner": "form-request",
+            "patterns": [
+                "~(?:^|/)app/Http/Requests(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Http/Requests/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema",
+                "http-boundary"
+            ],
+            "operation_set": "form-request"
+        },
+        {
+            "id": "app-resource",
+            "priority": 250,
+            "owner": "resource",
+            "patterns": [
+                "~(?:^|/)app/Http/Resources(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Http/Resources/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema",
+                "http-boundary"
+            ]
+        },
+        {
+            "id": "app-listener",
+            "priority": 250,
+            "owner": "listener",
+            "patterns": [
+                "~(?:^|/)app/Listeners(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Listeners/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-model-concern",
+            "priority": 260,
+            "owner": "model-concern",
+            "patterns": [
+                "~(?:^|/)app/Models/Concerns(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Models/Concerns/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-world-model",
+            "priority": 260,
+            "owner": "model",
+            "patterns": [
+                "~(?:^|/)app/Models/World(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Models/World/README.md",
+                "references/app/Models/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-model",
+            "priority": 250,
+            "owner": "model",
+            "patterns": [
+                "~(?:^|/)app/Models(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Models/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-notification",
+            "priority": 250,
+            "owner": "notification",
+            "patterns": [
+                "~(?:^|/)app/Notifications(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Notifications/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-policy",
+            "priority": 250,
+            "owner": "policy",
+            "patterns": [
+                "~(?:^|/)app/Policies(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Policies/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-provider",
+            "priority": 250,
+            "owner": "provider",
+            "patterns": [
+                "~(?:^|/)app/Providers(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Providers/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-support",
+            "priority": 250,
+            "owner": "support",
+            "patterns": [
+                "~(?:^|/)app/Support(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/Support/README.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-functions",
+            "priority": 260,
+            "owner": "helper",
+            "patterns": [
+                "~(?:^|/)app/functions\\.php$~i"
+            ],
+            "references": [
+                "references/app/functions.php.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        },
+        {
+            "id": "app-generic",
+            "priority": 100,
+            "owner": "application",
+            "patterns": [
+                "~(?:^|/)app(?:/|$)~i"
+            ],
+            "references": [
+                "references/app/README.md",
+                "references/app/php-shape.md"
+            ],
+            "gates": [
+                "live-evidence",
+                "code-and-schema"
+            ]
+        }
+    ]
+}

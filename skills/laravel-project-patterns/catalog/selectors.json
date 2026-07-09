@@ -1,0 +1,208 @@
+{
+    "operation_aliases": {
+        "delete": "destroy",
+        "reorder": "move"
+    },
+    "concern_aliases": {
+        "assertions": "persistence",
+        "auth": "authorization",
+        "bindings": "binding",
+        "delegation": "delegated-action",
+        "locks": "concurrency",
+        "request-validation": "validation"
+    },
+    "gates": {
+        "live-evidence": {
+            "reference": "SKILL.md",
+            "anchor": "required-workflow",
+            "load": false
+        },
+        "completion": {
+            "reference": "references/core/completion-checklist.md",
+            "anchor": "pattern",
+            "load": false
+        },
+        "code-and-schema": {
+            "reference": "references/core/code-and-schema.md",
+            "anchor": "pattern",
+            "load": true
+        },
+        "test-design": {
+            "reference": "references/core/test-design-and-style.md",
+            "anchor": "pattern",
+            "load": true
+        },
+        "http-boundary": {
+            "reference": "references/core/http-and-request-boundaries.md",
+            "anchor": "pattern",
+            "load": true
+        },
+        "action-boundary": {
+            "reference": "references/core/actions-and-concurrency.md",
+            "anchor": "pattern",
+            "load": true
+        }
+    },
+    "operation_sets": {
+        "controller-feature": {
+            "create": [
+                "references/tests/Feature/Http/Controllers/actions/create.md"
+            ],
+            "store": [
+                "references/tests/Feature/Http/Controllers/actions/store.md"
+            ],
+            "index": [
+                "references/tests/Feature/Http/Controllers/actions/index.md"
+            ],
+            "show": [
+                "references/tests/Feature/Http/Controllers/actions/show.md"
+            ],
+            "edit": [
+                "references/tests/Feature/Http/Controllers/actions/edit.md"
+            ],
+            "update": [
+                "references/tests/Feature/Http/Controllers/actions/update.md"
+            ],
+            "destroy": [
+                "references/tests/Feature/Http/Controllers/actions/destroy.md"
+            ],
+            "move": [
+                "references/tests/Feature/Http/Controllers/pattern-catalog/move.md"
+            ]
+        },
+        "action-integration": {
+            "create": [
+                "references/tests/Integration/Actions/scenario-catalog/create-actions.md"
+            ],
+            "store": [
+                "references/tests/Integration/Actions/scenario-catalog/create-actions.md"
+            ],
+            "update": [
+                "references/tests/Integration/Actions/scenario-catalog/update-actions.md"
+            ],
+            "destroy": [
+                "references/tests/Integration/Actions/scenario-catalog/lifecycle-default-and-delete-actions.md"
+            ],
+            "move": [
+                "references/tests/Integration/Actions/scenario-catalog/state-and-order-actions.md"
+            ],
+            "deactivate": [
+                "references/tests/Integration/Actions/scenario-catalog/lifecycle-default-and-delete-actions.md"
+            ],
+            "reactivate": [
+                "references/tests/Integration/Actions/scenario-catalog/lifecycle-default-and-delete-actions.md"
+            ]
+        },
+        "application-action": {
+            "create": [
+                "references/app/Actions/patterns/action-shape.md"
+            ],
+            "store": [
+                "references/app/Actions/patterns/action-shape.md"
+            ],
+            "update": [
+                "references/app/Actions/patterns/action-shape.md"
+            ],
+            "destroy": [
+                "references/app/Actions/patterns/action-shape.md"
+            ],
+            "move": [
+                "references/app/Actions/patterns/group-order-transitions.md"
+            ],
+            "deactivate": [
+                "references/app/Actions/patterns/idempotent-lifecycle-flags.md"
+            ],
+            "reactivate": [
+                "references/app/Actions/patterns/idempotent-lifecycle-flags.md"
+            ]
+        },
+        "application-controller": {
+            "create": [
+                "references/app/Http/Controllers/patterns/web-controller-shape.md"
+            ],
+            "store": [
+                "references/app/Http/Controllers/patterns/delegated-actions.md"
+            ],
+            "index": [
+                "references/app/Http/Controllers/patterns/web-controller-shape.md"
+            ],
+            "show": [
+                "references/app/Http/Controllers/patterns/web-controller-shape.md"
+            ],
+            "edit": [
+                "references/app/Http/Controllers/patterns/web-controller-shape.md"
+            ],
+            "update": [
+                "references/app/Http/Controllers/patterns/delegated-actions.md"
+            ],
+            "destroy": [
+                "references/app/Http/Controllers/patterns/delegated-actions.md"
+            ],
+            "move": [
+                "references/app/Http/Controllers/patterns/move-within-group.md"
+            ],
+            "deactivate": [
+                "references/app/Http/Controllers/patterns/lifecycle-controllers.md"
+            ],
+            "reactivate": [
+                "references/app/Http/Controllers/patterns/lifecycle-controllers.md"
+            ]
+        },
+        "api-controller-feature": {
+            "store": [
+                "references/tests/Feature/Http/Controllers/modes/api-json/json-store-example.md"
+            ],
+            "update": [
+                "references/tests/Feature/Http/Controllers/modes/api-json/json-update-example.md"
+            ]
+        },
+        "application-api-controller": {
+            "store": [
+                "references/app/Http/Controllers/patterns/api-controllers.md"
+            ],
+            "update": [
+                "references/app/Http/Controllers/patterns/api-controllers.md"
+            ]
+        },
+        "form-request": {
+            "store": [
+                "references/app/Http/Requests/patterns/request-shape.md"
+            ],
+            "update": [
+                "references/app/Http/Requests/patterns/request-shape.md"
+            ],
+            "move": [
+                "references/app/Http/Requests/patterns/move-within-group.md"
+            ]
+        },
+        "javascript-page": {
+            "create": [
+                "references/resources/js/patterns/create-edit-shell-and-shared-form.md"
+            ],
+            "store": [
+                "references/resources/js/patterns/create-edit-shell-and-shared-form.md"
+            ],
+            "index": [
+                "references/resources/js/patterns/index-pages.md"
+            ],
+            "show": [
+                "references/resources/js/patterns/show-and-lifecycle-pages.md"
+            ],
+            "edit": [
+                "references/resources/js/patterns/create-edit-shell-and-shared-form.md"
+            ],
+            "update": [
+                "references/resources/js/patterns/create-edit-shell-and-shared-form.md"
+            ],
+            "move": [
+                "references/resources/js/patterns/ordered-list-movement.md"
+            ],
+            "deactivate": [
+                "references/resources/js/patterns/show-and-lifecycle-pages.md"
+            ],
+            "reactivate": [
+                "references/resources/js/patterns/show-and-lifecycle-pages.md"
+            ]
+        }
+    }
+}

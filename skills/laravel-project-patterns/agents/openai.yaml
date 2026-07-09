@@ -1,0 +1,17 @@
+interface:
+  display_name: 'Laravel Project Patterns'
+  short_description: 'Laravel project code and test patterns'
+  default_prompt: >-
+    Apply $laravel-project-patterns to every Laravel code or test write, change,
+    deletion, and review. Before any reference-tree search/read or edit, run the
+    skill's scripts/context.php with plain php and every touched path. Read only
+    returned exact references; use returned --expand frontiers and --select
+    children. Do not use rg, find, globs, directory listings, guessed paths, or
+    broad sed reads to discover references. Rerun the full preflight before
+    further reference reads or edits whenever touched paths grow. Search live
+    project code only after preflight. Do not edit until each touched surface
+    has an owner, equivalent live sibling or explicit no-equivalent finding,
+    and path-matched references. Preserve every distinct HTTP entrypoint
+    contract even when an action has integration coverage.
+policy:
+  allow_implicit_invocation: true

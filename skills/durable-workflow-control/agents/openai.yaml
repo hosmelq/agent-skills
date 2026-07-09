@@ -1,0 +1,18 @@
+interface:
+  display_name: "Durable Workflow Control"
+  short_description: "Run scoped durable workflows"
+  default_prompt: >-
+    Use $durable-workflow-control only within the user's requested gate, source
+    boundary, and scope to create, resume, audit, or improve durable workflow
+    artifacts under .agents/workflows/durable-workflow-control/. Do not use it for
+    ordinary one-turn research, generic notes, docs, goals, or handoffs that do
+    not need durable tracking. Keep the primary control as the short cursor and
+    move evidence, source ledgers, work matrices, action/observation rows, and
+    tick history into linked support artifacts. Treat cursors that say workflow
+    complete, workflow blocked, waiting for human/approval, no next action, or
+    budget exhausted as hard stops even if a goal remains active. Row-level
+    done stops only that row. Q0 initializes a
+    durable control once; goal-only requests are not Q0. Q1 must be one material
+    action plus verification and a recorded next action or stop. Use
+    action/observation rows, validity prechecks, coverage contracts, stochastic
+    reporting, and model/tool constraints only when the loop needs them.
